@@ -1,0 +1,23 @@
+# Shared git configuration.
+# Machine- and user-specific identity lives in ~/.gitconfig.local.
+[include]
+	path = ~/.gitconfig.local
+
+[init]
+	defaultBranch = main
+
+[core]
+	editor = nano
+	pager = less -FRX
+
+[color]
+	ui = auto
+
+[pull]
+	rebase = false
+
+[push]
+	default = simple
+
+[fetch]
+	prune = true

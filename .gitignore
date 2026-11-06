@@ -1,0 +1,5 @@
+# Never commit machine-specific identity or secrets
+.gitconfig.local
+*.age
+*.bak
+*.bak-*
