@@ -18,7 +18,14 @@ Each top-level directory is a GNU Stow package that mirrors `$HOME`:
 ## Fresh machine
 
 The z0x.org installer does this automatically when the `shell` component is
-selected. Manual equivalent:
+selected and `DOTFILES_REPO` points at this repository:
+
+```sh
+DOTFILES_REPO=https://github.com/Tschoepel/dotfiles.git \
+  curl -fsSL https://z0x.org/i.sh | bash -s -- --with shell
+```
+
+Manual equivalent:
 
 ```sh
 sudo pacman -S --needed stow git zsh
