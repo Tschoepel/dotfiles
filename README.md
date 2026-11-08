@@ -54,10 +54,10 @@ git config --file ~/.gitconfig.local user.email "you@example.com"
 
 ## Secrets
 
-`~/.env` is machine-wide and never committed here. It is installed by the
-z0x.org installer (`--only env`) from the `keys.z0x.org` vault as an
-age-encrypted `env.age`. `zsh/.zshrc` sources it with `set -a`, so its
-variables are exported to interactive shells.
+`~/.env` is machine-wide and never committed here. The z0x.org installer
+(`--only env --env-file <path>`) decrypts a local copy of the age-encrypted
+`env.age` that you keep in the `keys.z0x.org` vault. `zsh/.zshrc` sources it
+with `set -a`, so its variables are exported to interactive shells.
 
 `GIT_NAME` and `GIT_EMAIL` can live there too; the installer copies them into
 `~/.gitconfig.local` so a fresh machine gets the right identity automatically.
