@@ -8,6 +8,16 @@ fi
 # If you come from bash you might have to change your $PATH.
 export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:$HOME/.config/composer/vendor/bin:$PATH"
 
+# Bun
+export PATH="$HOME/.bun/bin:$PATH"
+
+# .NET
+export DOTNET_ROOT=/usr/share/dotnet
+export PATH="$PATH:$DOTNET_ROOT"
+
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # Machine-wide secrets from the keys vault (installed by z0x.org/i.sh)
 if [ -f "$HOME/.env" ]; then
   set -a
@@ -73,7 +83,12 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-as-monitor \
     zdharma-continuum/zinit-annex-bin-gem-node \
     zdharma-continuum/zinit-annex-patch-dl \
-    zdharma-continuum/zinit-annex-rust
+    zdharma-continuum/zinit-annex-rust \
+    Aloxaf/fzf-tab \
+    MichaelAquilina/zsh-you-should-use
+
+zinit load 'zsh-users/zsh-history-substring-search'
+
 
 zinit wait lucid light-mode for \
   atinit"zicompinit; zicdreplay" \
@@ -86,3 +101,18 @@ zinit wait lucid light-mode for \
 
 ### End of Zinit's installer chunk
 
+# pnpm
+export PNPM_HOME="$HOME/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
+
+bindkey "^[[3~" delete-char
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
