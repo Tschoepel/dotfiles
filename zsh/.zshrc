@@ -28,8 +28,8 @@ alias c='clear'
 alias cd='z'
 alias ff='fastfetch'
 alias ls='eza -a --icons=always'
-alias ll='eza -al --icons=always'
-alias lt='eza -a --tree --level1 --icons=always'
+alias ll='eza -al --icons=always --header'
+alias lt='eza -a --tree --level 1 --icons=always'
 alias cat='bat'
 alias grep='grep --color=auto'
 
@@ -68,8 +68,14 @@ antigen bundle archlinux
 antigen bundle sudo
 antigen bundle command-not-found
 
-# Syntax highlighting bundle.
+# Completion and shell helpers.
+antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-history-substring-search
+antigen bundle MichaelAquilina/zsh-you-should-use
+antigen bundle Aloxaf/fzf-tab
+
+# Syntax highlighting must load last.
 antigen bundle zdharma-continuum/fast-syntax-highlighting
 
 # Tell Antigen that you're done.
