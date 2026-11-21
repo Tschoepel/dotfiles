@@ -13,7 +13,7 @@ Each top-level directory is a GNU Stow package that mirrors `$HOME`:
 | `bash`     | `~/.bashrc`                                   |
 | `starship` | `~/.config/starship.toml`                     |
 | `kitty`    | `~/.config/kitty/kitty.conf`                  |
-| `niri`     | `~/.config/niri/`                             |
+| `umbriel`  | `~/.config/umbriel/config.toml`               |
 
 ## Fresh machine
 
@@ -31,7 +31,7 @@ Manual equivalent:
 sudo pacman -S --needed stow git zsh
 git clone https://github.com/Tschoepel/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-stow --no-folding -t ~ git zsh bash starship kitty niri
+stow --no-folding -t ~ git zsh bash starship kitty umbriel
 ```
 
 If a target already exists, Stow refuses to overwrite it. Back the file up and
@@ -75,7 +75,7 @@ npx wrangler r2 object put <bucket>/env.age --file=env.age \
 ```sh
 cd ~/dotfiles
 git pull --ff-only
-stow --restow --no-folding -t ~ git zsh bash starship kitty niri
+stow --restow --no-folding -t ~ git zsh bash starship kitty umbriel
 ```
 
 ## Adding a dotfile
